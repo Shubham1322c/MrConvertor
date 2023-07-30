@@ -1,7 +1,5 @@
 # MrConvertor
 
-![MrConvertor Logo](./logo.png)
-
 MrConvertor is a simple yet powerful web application built with ReactJS that allows you to easily convert text between uppercase and lowercase, remove extra spaces, and even switch to a stylish dark mode for a comfortable user experience.
 
 ## Table of Contents
