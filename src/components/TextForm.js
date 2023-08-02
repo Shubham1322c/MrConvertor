@@ -6,44 +6,42 @@ export default function TextForm(props) {
   const handleUpbtn = () => {
     let UpText = text.toUpperCase();
     setText(UpText);
+    props.alert("Converted To Uppercase!", "success");
   };
 
   const handleLowbtn = () => {
     let UpText = text.toLowerCase();
     setText(UpText);
+    props.alert("Converted To Lowercase!", "success");
   };
 
   const handleSpace = () => {
     let ClearSpace = text.split(/[ ]+/);
     setText(ClearSpace.join(" "));
+    props.alert("Extra Spaces Cleared!", "success");
+    
   };
 
   const handleCopy = () => {
     let text = document.getElementById("myText");
     text.select();
     navigator.clipboard.writeText(text.value);
+    props.alert("Text Copied!", "success");
+    
   };
 
   const handleClear = () => {
     let ClearText = "";
     setText(ClearText);
+    props.alert("Text Cleared!", "success");
+    
   };
+  
+ 
 
   const handleOnChange = (event) => {
     setText(event.target.value);
   };
-
-  // let bg = document.body.style.cssText === `background-color:rgb(53, 55, 64); color: whitesmoke; `;
-
-  // if(bg){
-  //   document.getElementById("myText").style.cssText = `background-color: #6e6e80;
-  //   outline: none;
-  //   border: none;`;
-
-  // }else if(bg){
-  //   document.body.style = `background-color:#353740; color: whitesmoke;`;
-    
-  // }
 
   return (
     <>
@@ -51,12 +49,13 @@ export default function TextForm(props) {
 
    
       <div className={`mb-3 my-4`}>
-        <h1>{props.heading} &#128071;</h1>
+        <h1 className="Info">{props.heading} &#128071;</h1>
         <textarea className="form-control mb-3" id="myText" rows="8" value={text} onChange={handleOnChange}></textarea>
         <button className="btn btn-primary mx-1 my-1" onClick={handleUpbtn}>Convert To Uppercase</button>
         <button className="btn btn-primary mx-1 my-1" onClick={handleLowbtn}>Convert To Lowercase</button>
         <button className="btn btn-primary mx-1 my-1" onClick={handleSpace}>Clear Extraspace</button>
         <button className="btn btn-primary mx-1 my-1" onClick={handleCopy}>Copy To Clipboard</button>
+       
         <button className="btn btn-primary mx-1 my-1" onClick={handleClear}>Clear</button>
       </div>
       <div className="Info">

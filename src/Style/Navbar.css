@@ -1,0 +1,15 @@
+.colorBtn{
+    border-radius: 100%;
+    padding: 15px;
+    border: 1px solid whitesmoke;
+}
+
+#colorBtn1{
+    background-color: #0C134F;
+}
+#colorBtn2{
+    background-color: #1D267D;
+}
+#colorBtn3{
+    background-color: #393646;
+}

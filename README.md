@@ -76,6 +76,3 @@ MrConvertor is released under the [MIT License](./LICENSE), making it open and f
 ---
 
 Thank you for using MrConvertor! If you have any questions or feedback, feel free to reach out or create an issue in the repository. Happy converting!
-
-
-
