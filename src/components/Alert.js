@@ -6,10 +6,15 @@ export default function Alert(props) {
     return lower.charAt(0).toUpperCase() + lower.slice(1);
   }
   return (
-    props.alert && <div>
-      <div class={`alert alert-${props.alert.type}`} role="alert">
+    
+<div style={{height:"35px"}}>
+
+    {props.alert && <div>
+      <div className={`alert alert-${props.alert.type}`} role="alert">
         <strong>{Captalize(props.alert.type)}</strong>: {props.alert.message}
     </div>
-    </div>
+    </div>}
+</div>
+    
   )
 }

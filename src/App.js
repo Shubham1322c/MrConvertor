@@ -4,6 +4,10 @@ import TextForm from "./components/TextForm";
 import Alert from "./components/Alert";
 import propTypes from "prop-types";
 import React , { useState } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import About from "./components/About";
+
+
 
 
 function App(props) {
@@ -62,12 +66,16 @@ const chooseMode3 = () => {
 
   return (
     <>
+  <Router>
 
     <Navbar mode={mode} toggleMode={toggleMode} alert={toggleAlert} chooseMode={chooseMode} chooseMode2={chooseMode2} chooseMode3={chooseMode3} />
     <Alert alert={alert}/>
-    <div className="container">
-      <TextForm mode={mode} toggleMode={toggleMode} alert={toggleAlert}/>
-    </div>
+        <Routes>
+          <Route exact path="/" element={<TextForm mode={mode} toggleMode={toggleMode} alert={toggleAlert}/>}/>
+          <Route exact path="/about" element={<About/>}/>
+           
+        </Routes>
+  </Router>
 
     </>
 

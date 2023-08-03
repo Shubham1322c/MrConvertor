@@ -26,6 +26,7 @@ export default function TextForm(props) {
     let text = document.getElementById("myText");
     text.select();
     navigator.clipboard.writeText(text.value);
+    window.getSelection().removeAllRanges();
     props.alert("Text Copied!", "success");
     
   };
@@ -43,29 +44,33 @@ export default function TextForm(props) {
     setText(event.target.value);
   };
 
+  let decision = document.getElementById("myText");
   return (
     <>
+     <div className="container">
+
     <div className={`container text-${props.mode==='light'?'dark':'light'}`}>
 
    
       <div className={`mb-3 my-4`}>
         <h1 className="Info">{props.heading} &#128071;</h1>
         <textarea className="form-control mb-3" id="myText" rows="8" value={text} onChange={handleOnChange}></textarea>
-        <button className="btn btn-primary mx-1 my-1" onClick={handleUpbtn}>Convert To Uppercase</button>
-        <button className="btn btn-primary mx-1 my-1" onClick={handleLowbtn}>Convert To Lowercase</button>
-        <button className="btn btn-primary mx-1 my-1" onClick={handleSpace}>Clear Extraspace</button>
-        <button className="btn btn-primary mx-1 my-1" onClick={handleCopy}>Copy To Clipboard</button>
+        <button disabled={decision===""} className="btn btn-primary mx-1 my-1" onClick={handleUpbtn}>Convert To Uppercase</button>
+        <button disabled={decision===""} className="btn btn-primary mx-1 my-1" onClick={handleLowbtn}>Convert To Lowercase</button>
+        <button disabled={decision===""} className="btn btn-primary mx-1 my-1" onClick={handleSpace}>Clear Extraspace</button>
+        <button disabled={decision===""}  className="btn btn-primary mx-1 my-1" onClick={handleCopy}>Copy To Clipboard</button>
        
-        <button className="btn btn-primary mx-1 my-1" onClick={handleClear}>Clear</button>
+        <button disabled={decision===""} className="btn btn-primary mx-1 my-1" onClick={handleClear}>Clear</button>
       </div>
       <div className="Info">
         <h3>Text Information &#10024;</h3>
-        <p>{text.split(".").length - 1} Sentence {text.split(" ").length - 1} Word and {text.length} Characters</p>
-        <p>{0.18 * text.split(" ").length - 0.18} Minutes To Read</p>
+        <p>{text.split(".").length - 1} Sentence {text.split(" ").filter((word) => word !== '').length} Word and {text.replace(/\s/g, '').length} Characters</p>
+        <p>{0.08 * text.split(" ").filter((word) => word !== '').length} Minutes To Read</p>
         <h3>{text===""?"Enter Your Text In The Text Are To Preview Here!":'Preview'}&#128302;</h3>
         <p>{text}</p>
       </div>
       </div>
+     </div>
     </>
   );
 }
