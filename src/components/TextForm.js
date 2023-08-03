@@ -44,7 +44,7 @@ export default function TextForm(props) {
     setText(event.target.value);
   };
 
-  let decision = document.getElementById("myText");
+
   return (
     <>
      <div className="container">
@@ -55,12 +55,12 @@ export default function TextForm(props) {
       <div className={`mb-3 my-4`}>
         <h1 className="Info">{props.heading} &#128071;</h1>
         <textarea className="form-control mb-3" id="myText" rows="8" value={text} onChange={handleOnChange}></textarea>
-        <button disabled={decision===""} className="btn btn-primary mx-1 my-1" onClick={handleUpbtn}>Convert To Uppercase</button>
-        <button disabled={decision===""} className="btn btn-primary mx-1 my-1" onClick={handleLowbtn}>Convert To Lowercase</button>
-        <button disabled={decision===""} className="btn btn-primary mx-1 my-1" onClick={handleSpace}>Clear Extraspace</button>
-        <button disabled={decision===""}  className="btn btn-primary mx-1 my-1" onClick={handleCopy}>Copy To Clipboard</button>
+        <button disabled={text.length === 0} className="btn btn-primary mx-1 my-1" onClick={handleUpbtn}>Convert To Uppercase</button>
+        <button disabled={text.length === 0} className="btn btn-primary mx-1 my-1" onClick={handleLowbtn}>Convert To Lowercase</button>
+        <button disabled={text.length === 0} className="btn btn-primary mx-1 my-1" onClick={handleSpace}>Clear Extraspace</button>
+        <button disabled={text.length === 0}  className="btn btn-primary mx-1 my-1" onClick={handleCopy}>Copy To Clipboard</button>
        
-        <button disabled={decision===""} className="btn btn-primary mx-1 my-1" onClick={handleClear}>Clear</button>
+        <button disabled={text.length === 0} className="btn btn-primary mx-1 my-1" onClick={handleClear}>Clear</button>
       </div>
       <div className="Info">
         <h3>Text Information &#10024;</h3>
