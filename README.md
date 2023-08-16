@@ -9,7 +9,6 @@ MrConvertor is a simple yet powerful web application built with ReactJS that all
 - [Getting Started](#getting-started)
 - [Usage](#usage)
 - [Dark Mode](#dark-mode)
-- [Contributing](#contributing)
 - [License](#license)
 
 ## Introduction
@@ -27,23 +26,26 @@ Have you ever needed to quickly convert text between uppercase and lowercase? Or
 
 Follow these simple steps to get started with MrConvertor:
 
-1. Clone the repository to your local machine:
+1. **Clone the repository to your local machine:**
 
 git clone https://github.com/Shubham1322c/MrConvertor.git
 
-2. Navigate to the project directory:
-
+2. **Navigate to the project directory:**
+```bash
 cd MrConvertor
+```
 
-3. Install the required dependencies:
-
+3. **Install the required dependencies:**
+```bash
 npm install
+```
 
-4. Start the development server:
-
+4. **Start the development server:**
+```bash
 npm start
+```
 
-5. Open your web browser and visit `http://localhost:3000` to see MrConvertor in action.
+6. Open your web browser and visit `http://localhost:3000` to see MrConvertor in action.
 
 ## Usage
 
