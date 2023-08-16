@@ -27,9 +27,9 @@ Have you ever needed to quickly convert text between uppercase and lowercase? Or
 Follow these simple steps to get started with MrConvertor:
 
 1. **Clone the repository to your local machine:**
-
+```bash
 git clone https://github.com/Shubham1322c/MrConvertor.git
-
+```
 2. **Navigate to the project directory:**
 ```bash
 cd MrConvertor
